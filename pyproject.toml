@@ -1,0 +1,23 @@
+[project]
+name = "techno"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Slade Matthews", email = "53508159+sladem-tox@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.5.3",
+    "scipy>=1.18.1",
+    "soundfile>=0.14.0",
+]
+
+[project.scripts]
+techno = "techno.cli:main"
+sound_chk = "techno.sound_chk:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
