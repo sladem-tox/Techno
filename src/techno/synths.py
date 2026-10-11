@@ -9,8 +9,8 @@ from .audio import SR, lowpass, soft_clip
 Waveform = Literal["sine", "saw", "square", "triangle", "pulse"]
 
 
-def midi_to_hz(note: float) -> float:
-    """Convert a MIDI note number to frequency in Hz."""
+def midi_to_hz(note: float | np.ndarray) -> float | np.ndarray:
+    """Convert scalar or array MIDI note numbers to frequencies in Hz."""
     return 440.0 * 2 ** ((note - 69) / 12)
 
 
