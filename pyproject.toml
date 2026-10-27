@@ -17,6 +17,8 @@ dependencies = [
 [project.scripts]
 techno = "techno.cli:main"
 sound_chk = "techno.sound_chk:main"
+sound_lab = "techno.sound_lab:main"
+sound_lab_gui = "techno.sound_lab_gui:main"
 
 [build-system]
 requires = ["uv_build>=0.12.15,<0.13.0"]

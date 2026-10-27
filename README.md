@@ -82,6 +82,34 @@ uv run sound_chk --play sfx:spaceship
 Generated preview sounds are written to `Tracks/sound_check/` before they are
 opened with the default audio player. Sample files are opened directly.
 
+## Experiment with sound design
+
+Use the sound laboratory for adjustable, non-compositional experiments:
+
+```powershell
+uv run sound_lab --list
+uv run sound_lab --sound ring_mod_drone --carrier 220 --modulator 37 --duration 4 --play
+uv run sound_lab --sound materialisation --duration 3 --noise-amount 0.6
+uv run sound_lab --sound alien_drone --note 38 --cutoff 1400
+uv run sound_lab --sound radar_ping --frequency 1200 --echo-delay 0.35
+uv run sound_lab --sound teleportation_beam --duration 2 --pulse-rate 14
+```
+
+Laboratory WAV files are written to `Tracks/lab/`. Generate several deterministic
+variations for comparison with `--variations`, or choose a filename with
+`--output`.
+
+For an interactive Tk interface, run:
+
+```powershell
+uv run sound_lab_gui
+# Or:
+uv run sound_lab --gui
+```
+
+Select a patch to reveal its parameters, edit the values, then generate or
+generate and play the resulting WAV.
+
 ## Project structure
 
 ```text
@@ -93,6 +121,8 @@ src/techno/
 ├── drums.py                # Drum synthesizers
 ├── synths.py               # Bass, chords, and oscillators
 ├── sfx.py                 # Retro video-game-style one-shot generators
+├── sound_design.py        # Experimental sound-design generators
+├── sound_lab.py           # Sound-design experimentation CLI
 ├── effects.py              # Delay and mastering
 ├── read.py                 # WAV waveform display
 └── compositions/
